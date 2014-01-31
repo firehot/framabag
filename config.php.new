@@ -1,0 +1,31 @@
+<?php
+defined('SALT') or define('SALT', '6e30ae8321ec75dc48299cff94afe889460429c4');
+
+defined('MAILJET_USERNAME') or define('MAILJET_USERNAME', '');
+defined('MAILJET_PASSWORD') or define('MAILJET_PASSWORD', '');
+defined('MAILJET_ID_LIST') or define('MAILJET_ID_LIST', '');
+
+defined('FROM_EMAIL') or define('FROM_EMAIL', 'Framabag <hello@wallabag.org>');
+defined('SUBJECT_ACTIVATE') or define('SUBJECT_ACTIVATE', 'Framabag — Activate your account');
+defined('SUBJECT_ACTIVATED') or define('SUBJECT_ACTIVATED', 'Framabag — Your account is activated');
+defined('SUBJECT_LOST') or define('SUBJECT_LOST', 'Framabag — Lost your password?');
+
+defined('PATH_CORE') or define('PATH_CORE', '/var/www/framabag.org/htdocs/');
+
+mysql_connect('localhost', 'root', '');
+mysql_select_db('framabag');
+
+
+function executeQuery($handle, $sql, $params) {
+    try
+    {
+        $query = $handle->prepare($sql);
+        $query->execute($params);
+        return $query;
+    }
+    catch (Exception $e)
+    {
+        Tools::logm('execute query error : '.$e->getMessage());
+        return FALSE;
+    }
+}

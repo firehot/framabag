@@ -1,0 +1,358 @@
+@font-face {
+  font-family: 'PT Sans Caption';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans Caption'), local('PTSans-Caption'), url(../fonts/ptsanscaption.woff) format('woff');
+}
+/*
+ * Pour la framanav, il faut un padding-top sur le body
+ */
+body {
+  /*  padding-top: 45px;*/
+}
+/*
+ * Framasoft boilerplate
+ */
+.frama {
+    color: #6A5687;
+}
+.bag {
+    color: #9BAE5F;
+}
+.soft {
+    color: #EB7E41;
+}
+#content a .frama, a .soft, a .bag {
+    font-weight: bold;
+}
+#content a {
+    color: #888;
+    border-bottom: 1px dashed #888;
+}
+#content a:hover {
+    color: #625092;
+    text-decoration: none;
+    border-bottom: 1px dashed #625092;
+}
+#content a.btn,
+#content a.btn:hover{
+    border-bottom: 1px solid #adadad;
+}
+#content p,
+#content li,
+#accordion {
+    font-family: 'DejaVu Sans', Verdana, Geneva, sans-serif;
+    color: #333;
+}
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6 {
+    font-family: 'PT Sans Caption', GillSans, sans-serif;
+    font-weight: bold;
+    color: #666;
+}
+#content h3 {
+    font-size: 24px;
+}
+#content h4 {
+    font-size: 18.2px;
+}
+hr {
+    height: 0.85em;
+    background-color: #eee;
+    border: none;
+}
+/*
+ * Menu de navigation
+ */
+#framabag-nav > ul,
+#install-nav > ul,
+#faq-wallabag-nav > ul {
+    font-size: 12px;
+    padding-top: 20px;
+}
+#framabag-nav > ul > li,
+#install-nav > ul > li,
+#faq-wallabag-nav > ul > li {
+    background-color: #FFF;
+}
+#framabag-nav > ul > li:first-child,
+#framabag-nav > ul > li:first-child > a,
+#install-nav > ul > li:first-child,
+#install-nav > ul > li:first-child > a,
+#faq-wallabag-nav > ul > li:first-child,
+#faq-wallabag-nav > ul > li:first-child > a {
+    border-radius: 6px 6px 0 0;
+}
+#framabag-nav > ul > li:last-child,
+#framabag-nav > ul > li:last-child > a,
+#install-nav > ul > li:last-child,
+#install-nav > ul > li:last-child > a,
+#faq-wallabag-nav > ul > li:last-child,
+#faq-wallabag-nav > ul > li:last-child > a {
+    border-radius: 0 0 6px 6px;
+}
+#framabag-nav >.nav-list > li > a {
+    border-color: #BCD772;
+}
+#faq-wallabag-nav >.nav-list > li > a {
+    border-color: rgb(229, 229, 229);
+}
+#install-nav >.nav-list > li > a {
+    border-color: rgb(244, 215, 140);
+}
+#framabag-nav >.nav-list > li > a,
+#install-nav >.nav-list > li > a,
+#faq-wallabag-nav >.nav-list > li > a {
+    border-width: 1px;
+    border-style: solid;
+    display: block;
+    margin: 0 0 -1px;
+    padding: 8px 14px;
+}
+#framabag-nav >.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+    background-color: #BCD772;
+    color: #333333;
+    text-shadow: none;
+}
+#faq-wallabag-nav >.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+    background-color: #91D0FF;
+    color: #333333;
+    text-shadow: none;
+}
+#install-nav >.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
+    background-color: #FFE297;
+    color: #333333;
+    text-shadow: none;
+}
+/*
+ * Commun à toutes les slides, sauf à #home !
+ */
+.slide {
+    padding-top: 100px;
+    padding-bottom: 125px;
+}
+/*
+ * Slide d'accueil
+ */
+#home {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+.beta {
+    height: 100px;/*2em;*/
+    width:100px;
+}
+.big-title {
+    font-family:DejaVu Sans, Verdana, Geneva, sans-serif;
+    font-size: 200%;
+    height: 177px;
+}
+.big-title .frama, .big-title .bag {
+  /* text-shadow: 3px 3px 3px #888;*/
+    position: relative;
+}
+/*
+ * Framabag ? C'est quoi ça ?
+ */
+#kezako {
+    background-color: #C9D7A1;
+}
+.rotateY {
+    width: 35%;
+    margin-top: -10px;
+    perspective: 350px;
+    -o-perspective: 350px;
+    -ms-perspective: 350px;
+    -webkit-perspective: 350px;
+    transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.rotateY img {
+    transform: rotateY(25deg);
+    -o-transform: rotateY(25deg);
+    -ms-transform: rotateY(25deg);
+    -webkit-transform: rotateY(25deg);
+    transition: all 0.4s ease-in-out 0s;
+    box-shadow: 10px 10px 5px #888888;
+}
+.rotateY img:hover {
+    transform:scale(2,2) translate(90px, 30px);
+    -o-transform:scale(2,2) translate(90px, 30px);
+    -ms-transform:scale(2,2) translate(90px, 30px);
+    -webkit-transform:scale(2,2) translate(90px, 30px);
+    box-shadow: none;
+}
+
+/*
+ * C'est quoi un flux RSS ?
+ */
+#kezako-rss {
+    background-color: #9DCE88;
+}
+#rss-symbol {
+    margin: 0 10px 5px 10px;
+    animation: RssSpin 7s infinite;
+    -webkit-animation: RssSpin 7s infinite;
+    animation-direction:alternate;
+    -webkit-animation-direction:alternate;
+}
+@keyframes RssSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(1080deg); }
+}
+@-webkit-keyframes RssSpin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(1080deg); }
+}
+#NB-RSS {
+    padding-top: 80px;
+}
+/*
+ * Comment ça marche ?
+ */
+#komen-sa-marche {
+    background-color: #AACE9B;
+}
+/*
+ * La framarticle_toolbar
+ */
+#framarticle_toolbar {
+    background-color: #C5D78D;
+}
+/*
+ * Mobilité
+ */
+#mobilite {
+    background-color: #DBD8A4;
+}
+
+.rotateY-right {
+    width: 35%;
+    margin-top: -10px;
+    perspective: 350px;
+    -o-perspective: 350px;
+    -ms-perspective: 350px;
+    -webkit-perspective: 350px;
+    transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.rotateY-right img {
+    transform: rotateY(-25deg);
+    -o-transform: rotateY(-25deg);
+    -ms-transform: rotateY(-25deg);
+    -webkit-transform: rotateY(-25deg);
+    transition: all 0.4s ease-in-out 0s;
+    box-shadow: 10px 10px 5px #888888;
+}
+.rotateY-right img:hover {
+    transform:scale(2,2) translate(-90px, 30px);
+    -o-transform:scale(2,2) translate(-90px, 30px);
+    -ms-transform:scale(2,2) translate(-90px, 30px);
+    -webkit-transform:scale(2,2) translate(-90px, 30px);
+    box-shadow: none;
+}
+/*
+ * FAQ
+ */
+#faq {
+    background-color: #DBD790;
+}
+/*
+ * Maintenance
+ */
+.maintenance {
+    max-width: 360px;
+    margin-top: 30px;
+}
+#creditsLL {
+    position: absolute;
+    bottom: 0;
+}
+/*
+ * FAQ wallabag
+ */
+#body-faq-wallabag {
+    background-color: rgb(145, 208, 255);
+}
+#faq-wallabag {
+    padding-top: 40px;
+}
+.medium-title {
+    font-family:DejaVu Sans, Verdana, Geneva, sans-serif;
+    font-size: 150%;
+    height: 177px;
+}
+#accordion {
+    margin-top: 20px;
+}
+#accordion a,
+#accordion a:hover{
+    color: #333;
+    border: none;
+}
+.accordion-toggle,
+/*.accordion-inner,*/
+.panel-body {
+    background-color: #fff;
+}
+.accordion-toggle.lead,
+/*.accordion-inner.lead,*/
+.panel-body.lead {
+    margin-bottom: 0;
+}
+
+a.accordion-toggle.lead {
+	background-color: #f5f5f5;
+}
+#collapseEleven > div > p > small > a {
+    border-bottom: 1px dashed #625092;
+}
+#collapseEleven > div > p > small > a:hover {
+    color: rgb(98, 80, 146);
+    text-decoration: none;
+    border-bottom: 1px dashed rgb(98, 80, 146);
+}
+/*
+ * FAQ installation
+ */
+#install {
+    padding-top: 120px;
+    padding-bottom: 100px;
+}
+#install-wallabag {
+    background-color: rgb(255, 226, 151);
+}
+#particular-wallabag {
+    background-color: rgb(255, 214, 108);
+}
+.icon-chevron-right.muted {
+    opacity: 0.25;
+}
+
+/* Fix Bootstrap 3 */
+.row {
+	margin-left:0;
+	margin-right:0;
+}
+
+label {
+    width: 15em;
+}
+
+.text-danger {
+    color: #b94a48 !important;
+}
+
+.text-success {
+    color: rgb(70, 136, 71) !important;
+}

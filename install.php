@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+        <title>Framabag — How to install wallabag</title>
+
+        <link rel="shortcut icon" href="./favicon.png">
+        <link media="screen" rel="stylesheet" href="nav/lib/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/framabag.css">
+        <link rel="stylesheet" href="css/framabag-responsive.css">
+        <script src="nav/lib/jquery/jquery.min.js" type="text/javascript"></script>
+        <script src="nav/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="nav/nav.js" id="nav_js" type="text/javascript"></script>
+     </head>
+    <body data-spy="scroll" data-target="#install-nav" data-offset="46" id="install-body">
+        <div id="content">
+            <!-- - - - - - - - - - - - - - - - - - Framanews-nav - - - - - - - - - - - - - -->
+            <div class="affix col-md-2 visible-md visible-lg" id="install-nav">
+                <ul class="nav nav-list">
+                    <li><a href="#install" >How to install wallabag</a></li>
+                    <li><a href="#install-wallabag" >Documentation</a></li>
+                    <li><a href="#install-requis" ><span class="glyphicon glyphicon-chevron-right muted"></span> Requirements</a></li>
+                    <li><a href="#install-installation" ><span class="glyphicon glyphicon-chevron-right muted"></span> Installation</a></li>
+                    <li><a href="#install-help" ><span class="glyphicon glyphicon-chevron-right muted"></span> Trouver de l'aide</a></li>
+                    <li><a href="#particular-framabag" >Framabag specific aspects</a></li>
+                    <li><a href="#part-fork" ><span class="glyphicon glyphicon-chevron-right muted"></span> Fork</a></li>
+                    <li><a href="#part-plugins" ><span class="glyphicon glyphicon-chevron-right muted"></span> Plugins</a></li>
+                    <li><a href="index.php" onclick="window.open('index.php', '_self');">Homepage</a></li>
+                    <li><a href="wallabag.php" onclick="window.open('wallabag.php', '_self');">wallabag FAQ</a></li>
+                </ul>
+            </div>
+            <!-- - - - - - - - - - - - - - - - - - /Framanews-nav - - - - - - - - - - - - - -->
+            <div class="row" id="install">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <h1>
+                        <span class="medium-title">How to install wallabag</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="row slide" id="install-wallabag">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1>Documentation</h1>
+                    <div class="lead">
+                        <h2>Official webpage</h2>
+                        <p><small>This tutorial uses <a href="http://doc.wallabag.org">official documentation of wallabag</a>. </small></p>
+                        <h2 id="install-requis">Requirements</h2>
+                        <ul>
+                            <li><p><small>a web server and database (SQLite, MySQL or PostgreSQL),</small></p></li>
+                            <li><p><small>les logins/mots de passe nécessaires à la connexion à la base de données. Ttrss peut coexister avec d'autres applications sur une base de données partagée, créer une base de donnée dédiée n'est pas nécessaire,</small></p></li>
+                            <li><p><small>votre serveur web devrait utiliser au moins PHP 5.3 ou plus récent. L'utilisation d'un accélérateur comme php-apc est fortement recommendé.</small></p></li>
+                        </ul>
+                        <h2 id="install-installation">Installation</h2>
+                        <ol>
+                            <li>
+                                <p><small>
+                                    Désarchivez le tar.gz dans le répertoire de destination&nbsp;:
+                                    <pre>tar zxfv Tiny-Tiny-RSS-1.x.x.tar.gz</pre>
+                                    Il est recommandé de renommer le répertoire en ttrss pour plus de commodité&nbsp;:
+                                    <pre>mv Tiny-Tiny-RSS-1.x.x ttrss</pre>
+                                    Vous pouvez aussi désarchiver le tar.gz sur votre machine locale et envoyer les fichiers sur le serveur en utilisant FTP ou tout autre moyen à votre disposition.
+                                </small></p>
+                            </li>
+                            <li><p><small>Vérifiez que vous pouvez accéder à <em>http://example.com/ttrss/install/</em>.</small></p></li>
+                            <li><p><small>Procédez à l'installation avec l'assistant. Celui-ci vous demandera vos identifiants de base de données et l'URL complète d'accès à votre ttrss (par exemple, <em>http://example.com/ttrss/</em>). Cette URL doit si possible être accessible depuis l'extérieur, n'utilisez pas <em>localhost</em>, cela casse le support du PUSH. Si vous déployez ttrss sur un réseau local, vous pouvez vous en passer.</small></p></li>
+                            <li><p><small>L'assistant va générer un fichier <em>config.php</em> pour vous une fois que vous aurez entré les identifiants de la base de donnée et celle-ci initialisée. Vous devrez copier le texte de l'assistant et le copier dans <em>config.php</em> sur le serveur, dans le répertoire d'installation. Si cela lui est possible, l'assistant le fera pour vous de façon automatique.</small></p></li>
+                            <li><p><small>Il est conseillé de relire le fichier <em>config.php</em> pour voir si vous voulez pas ajouter des fonctionnalités ou changer les valeurs de configuration par défaut.</small></p></li>
+                            <li><p><small>Après en avoir fini avec l'assistant, ouvrez votre installation de Tiny Tiny RSS sur <em>http://example.com/ttrss/</em> et connectez-vous avec les identifiants par défaut (login&nbsp;:&nbsp;<em>admin</em>, mot de passe&nbsp;:&nbsp;<em>password</em>).</small></p></li>
+                            <li><p><small>Allez dans le préférences et changer votre mot de passe&nbsp;!</small></p></li>
+                            <li><p><small>Vous aurez besoin de choisir la méthode de mise à jour des flux. Voyez <a href="#install-updating">plus bas</a>.</small></p></li>
+                            <li><p><small>Si tout s'est bien passé, vous pouvez commencer à utiliser ttrss normalement. Créez un utilisateur non-administrateur, connectez-vous avec celui-ci et commencez à importer vos flux, à vous abonner à d'autres et à configurer ttrss à votre goût.</small></p></li>
+                            <li><p><small>C'est fini&nbsp;!</small></p></li>
+                        </ol>
+                        <h2 id="install-help">Trouver de l'aide</h2>
+                        <p><small>En cas de problème, vous pouvez aller sur le <a href="http://tt-rss.org/forum/">forum officiel de Tiny Tiny RSS</a> (anglophone). Attention, cherchez bien dedans avant de poser une question, l'auteur n'est pas tendre et a son franc-parler. Les habitués aussi d'ailleurs.</small><p>
+                        <p><small>Vous pouvez aussi nous demander conseil en passant par la <a href="http://contact.framasoft.org/">page de contact Framasoft</a></small></p>
+                    </div>
+                    <a class="btn btn-default btn-sm pull-right goto" href="#install-body" title="Retour au haut de la page"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                </div>
+            </div>
+            <div class="row slide" id="particular-framanews">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1>Particularités Framanews</h1>
+                    <h2 id="part-fork">Fork</h2>
+                    <div class="lead">
+                        <p><small>Nous avons forké Tiny Tiny RSS pour y apporter quelques modifications nécessaires au bon fonctionnement de Framanews.</small></p>
+                        <ul>
+                            <li><p><small>traduction en français de certaines messages qui ne passaient pas dans le module de localisation, fuseau horaire Europe/Paris par défaut,</small></p></li>
+                            <li><p><small>augmentation de la durée de rétention du cache des flux,</small></p></li>
+                            <li><p><small>personnalisation du logo, du titre et de la favicon,</small></p></li>
+                            <li><p><small>abonnement automatique au flux du Framablog à l'inscription,</small></p></li>
+                            <li><p><small>utilisation de sous-modules git pour automatiser l'installation de plugins que nous voulons proposer,</small></p></li>
+                            <li><p><small>intégration d'un système d'invitation / désabonnement à la liste de diffusion des utilisateurs de Framanews lors de l'inscription / la suppression du compte,</small></p></li>
+                            <li><p><small>tuning de certaines parties du système de mise à jour (plus agressif, mais moins gourmand en ressources),</small></p></li>
+                            <li><p><small>création d'une nouvelle méthode (placesAvailables) dans l'API pour avoir le nombre de places restantes.</small></p></li>
+                        </ul>
+                        <p><small>Aucune de ces modifications n'est bloquante&nbsp;: vous pouvez utiliser notre fork pour votre instance ttrss. Vous pouvez récupérer notre fork sur <a href="https://github.com/framasoft/framanews_ttrss">Github</a> (branche "full_french" par défaut).</small></p>
+                        <pre>git clone https://github.com/framasoft/framanews_ttrss.git</pre>
+                    </div>
+                    <a class="btn btn-default btn-sm pull-right goto" href="#install-body" title="Retour au haut de la page"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                    <h2 id="part-plugins">Plugins</h2>
+                    <div class="lead">
+                        <p><small>Nous avons aussi développé des plugins ttrss pour nos besoins&nbsp;:</small></p>
+                        <ul>
+                            <li>
+                                <h4>Quota</h4>
+                                <p><small>Permet de limiter le nombre de flux par utilisateur. Si l'utilisateur dépasse le nombre de flux autorisé, il sera redirigé vers la page de configuration avec un message lui demanant de supprimer les flux surnuméraires. <a href="https://github.com/framasoft/framanews_quota.git">Lien Github</a></small></p>
+                                <pre>git clone https://github.com/framasoft/framanews_quota.git</pre>
+                            </li>
+                            <li>
+                                <h4>Framarticle_toolbar</h4>
+                                <p><small>Ajoute un certain nombre de boutons d'accès rapide à l'interface principale de ttrss. <a href="https://github.com/framasoft/framarticle_toolbar.git">Lien Github</a></small></p>
+                                <pre>git clone https://github.com/framasoft/framarticle_toolbar.git</pre>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-default btn-sm pull-right goto" href="#install-body" title="Retour au haut de la page"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                </div>
+            </div>
+            <div class="col-md-2 visible-xs visible-sm" id="install-nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#install" >How to install wallabag</a></li>
+                    <li><a href="#install-wallabag" >Documentation</a></li>
+                    <ul>
+                        <li><a href="#install-requis" ><span class="glyphicon glyphicon-chevron-right muted"></span> Requirements</a></li>
+                        <li><a href="#install-installation" ><span class="glyphicon glyphicon-chevron-right muted"></span> Installation</a></li>
+                        <li><a href="#install-updating" ><span class="glyphicon glyphicon-chevron-right muted"></span> Mise à jour des flux</a></li>
+                        <li><a href="#install-help" ><span class="glyphicon glyphicon-chevron-right muted"></span> Trouver de l'aide</a></li>
+                    </ul>
+                    <li><a href="#particular-framabag" >Framabag specific aspects</a></li>
+                    <ul>
+                        <li><a href="#part-fork" ><span class="glyphicon glyphicon-chevron-right muted"></span> Fork</a></li>
+                        <li><a href="#part-plugins" ><span class="glyphicon glyphicon-chevron-right muted"></span> Plugins</a></li>
+                    </ul>
+                    <li><a href="index.php" onclick="window.open('index.php', '_self');">Homepage</a></li>
+                    <li><a href="wallabag.php" onclick="window.open('wallabag.php', '_self');">wallabag FAQ</a></li>
+                </ul>
+                <a class="btn btn-default btn-sm pull-right goto" href="#install-body" title="Retour au haut de la page"><span class="glyphicon glyphicon-arrow-up"></span></a>
+            </div>
+        </div> <!-- #content -->
+        <script src="js/smoothscrool.js"></script>
+    </body>
+</html>
